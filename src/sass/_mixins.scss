@@ -1,0 +1,25 @@
+@import "_variables.scss";
+
+@mixin font-style-nunito($color, $size, $align) {
+    color: $color;
+    font-size: $size;
+    font-family: 'Nunito';
+    font-weight: 400;
+    text-align: $align;
+    line-height: 26px;
+}
+
+@mixin yellow-button() {
+    background: $primary;
+    display: block;
+    border-radius: 80px;
+    width: 100px;
+    height: 34px;
+    @include font-style-nunito(#000000, 16px, center)
+}
+
+
+@font-face {
+    font-family: 'Nunito';
+    src: local('Nunito'), url(../fonts/Nunito-Regular.ttf) format('woff');
+}

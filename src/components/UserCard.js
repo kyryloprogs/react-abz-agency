@@ -9,7 +9,10 @@ const UserCard = ({ user }) => {
         <div className="userCard_name">{user.name}</div>
         <div className="userCard_additional">
             {user.position}<br/>
-            {user.email}<br/>
+            <div className="tooltip">
+              {user.email}<br/>
+              <span className="tooltiptext">{user.email}</span>
+            </div>
             {user.phone}
         </div>
     </div>

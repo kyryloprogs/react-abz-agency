@@ -6,7 +6,7 @@ const GetSection = ({ users, countOfPages, setPageNumber, pageNumber }) => {
 
     const updateUsers = () => {
         setPageNumber(pageNumber + 1)
-    } 
+    }
 
     return (
         <section className='getskills'>
@@ -17,13 +17,12 @@ const GetSection = ({ users, countOfPages, setPageNumber, pageNumber }) => {
 
                 <div className="users_list">
                     {users.map((user) => (
-                        <UserCard key={user.id} user={user} />
+                        <UserCard key={user.phone} user={user} />
                     ))}
                 </div>
                 {countOfPages > pageNumber && (
                     <div className="add_more_btn" onClick={() => updateUsers()}>Show more</div>
                 )}
-                    
             </div>
         </section>
     )

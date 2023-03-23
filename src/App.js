@@ -3,6 +3,7 @@ import Header from './components/Header';
 import GetSection from './components/GetSection';
 import "./sass/style.scss";
 import PostSection from './components/PostSection';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -10,12 +11,18 @@ function App() {
   const [users, setUsers] = useState([]);
   const [countOfPages, setCountOfPages] = useState(1);
   const [positionList, setPositionList] = useState([]);
+
   const endStatusUpdate = (data) => {
     data.total_pages !== countOfPages && setCountOfPages(data.total_pages);
-    setUsers([...users, ...data.users]);
+    if (pageNumber > 1) {
+      setUsers([...users, ...data.users])
+    } else {
+      setUsers(data.users)
+    }
   };
 
   useEffect(() => {
+
     fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${pageNumber}&count=6`)
       .then((response) => response.json())
       .then((data) => endStatusUpdate(data))
@@ -31,7 +38,8 @@ function App() {
     <div className="App">
       <Header />
       <GetSection users={users} pageNumber={pageNumber} setPageNumber={setPageNumber} countOfPages={countOfPages} />
-      <PostSection positionList={positionList}/>
+      <PostSection positionList={positionList} setPageNumber={setPageNumber} setUsers={setUsers} />
+      <Footer />
     </div>
   );
 }
