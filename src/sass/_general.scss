@@ -233,11 +233,10 @@ nav {
     
         .text_label {
             position: absolute;
-            font-size: 16px;
-            left: 20px;
             top: 30%;
-            background-color: white;
-            color: gray;
+            background-color: #F8F8F8;
+            @include font-style-nunito(#7E7E7E, 16px, center);
+            line-height: 20px;
             margin-left: 20px;
             transition: .1s ease-out;
             transform-origin: left top;
@@ -249,7 +248,7 @@ nav {
         input[type="phone"],
         input[type="email"] {
             outline: none;
-            border: 1px solid gray;
+            border: 1px solid #D0CFCF;
             margin: 50px auto 0 auto;
             padding-left: 20px;
             border-radius: 5px;
@@ -258,6 +257,7 @@ nav {
             height: 50px;
             @include font-style-nunito(#000000, 16px, start);
             display: block;
+            background-color: #F8F8F8;
         }
     
     
@@ -294,18 +294,18 @@ nav {
             width: 326px;
             height: 52px;
             background-color: #F8F8F8;
+            color: black;
         }
     
         input[type=file]::file-selector-button {
             font-weight: bold;
-            color: dodgerblue;
             padding: 0.5em;
             border: 1px solid rgba(0, 0, 0, 0.87);
             border-radius: 4px 0px 0px 4px;
             height: 52px;
             margin-right: 16px;
             @include font-style-nunito(rgba(0, 0, 0, 0.87), 16px, center);
-            content: 'your wording';
+            color: black;
         }
     
         .text_error {
