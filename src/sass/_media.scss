@@ -21,23 +21,9 @@
     }
 
 
-    // .form {
-    //     width: 380px;
-
-    //     input[type="text"],
-    //     input[type="phone"],
-    //     input[type="email"] {
-    //         width: 356px;
-    //     }
-
-    //     input[type="file"] {
-    //         width: 378px;
-    //     }
-
-    //     // .phone_help, .input_error {
-    //     //     padding-left: 16px;
-    //     // }
-    // }
+    footer {
+        display: none;
+    }
 
 }
 
@@ -79,7 +65,7 @@
         }
     }
 
-    .footer {
+    footer {
         display: block;
     }
 
@@ -119,9 +105,11 @@
         margin-left: auto;
     }
 
+    footer {
+        display: block;
+    }
     
 }
-
 
 
 @media (min-width: 1444px) {
