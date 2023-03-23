@@ -11,8 +11,8 @@ const Header = () => {
             <nav>
                 <img className="logo" src={logo} alt="logo"/>
                 <ul className="menu">
-                    <li className="menu_button"><a href="#" className="menu_link">Users</a></li>
-                    <li className="menu_button"><a href="#" className="menu_link">Sign Up</a></li>
+                    <li className="menu_button"><a href="/" className="menu_link">Users</a></li>
+                    <li className="menu_button"><a href="/" className="menu_link">Sign Up</a></li>
                 </ul>
             </nav>
             <div className="subheader">

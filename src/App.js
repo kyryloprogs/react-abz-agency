@@ -22,7 +22,6 @@ function App() {
   };
 
   useEffect(() => {
-
     fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${pageNumber}&count=6`)
       .then((response) => response.json())
       .then((data) => endStatusUpdate(data))
