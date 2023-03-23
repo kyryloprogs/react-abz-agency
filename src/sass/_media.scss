@@ -1,0 +1,146 @@
+
+
+
+@media (min-width: 375px) {
+    .skills_header {
+        padding: 0;
+    }
+
+    .getskills {
+        .users_list {
+            flex-flow: column wrap;
+    
+            .userCard {
+                width: 326px;
+            }
+        }
+    }
+
+    .logo {
+        padding: 17px 0 17px 16px;
+    }
+
+
+    // .form {
+    //     width: 380px;
+
+    //     input[type="text"],
+    //     input[type="phone"],
+    //     input[type="email"] {
+    //         width: 356px;
+    //     }
+
+    //     input[type="file"] {
+    //         width: 378px;
+    //     }
+
+    //     // .phone_help, .input_error {
+    //     //     padding-left: 16px;
+    //     // }
+    // }
+
+}
+
+@media (min-width: 760px) {
+
+    .users_list {
+        flex-flow: row wrap;
+
+        .userCard {
+            width: 344px;
+        }
+    }
+
+    .logo {
+        padding: 17px 0 17px 32px;
+    }
+
+    .subheader {
+        min-height: 650px;
+
+        h1 {
+            padding-top: 164px;
+            width: 380px;
+        }
+
+        &_additional {
+            width: 380px;
+        }
+    }
+
+    .getskills {
+        padding-top: 140px;
+        .users_list {
+            flex-flow: row wrap;
+    
+            .userCard {
+                width: 344px;
+            }
+        }
+    }
+
+    .footer {
+        display: block;
+    }
+
+    .logo {
+        padding: 17px 0 16px 16px;
+    }
+
+    form {
+        width: 380px;
+
+        input[type="text"],
+        input[type="phone"],
+        input[type="email"] {
+            width: 356px;
+        }
+
+        input[type="file"] {
+            width: 378px;
+        }
+
+    }
+
+}
+
+@media (min-width: 1025px) {
+
+    .logo {
+        padding: 17px 0 17px 60px;
+    }
+
+
+    .container {
+        max-width: 1170px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    
+}
+
+
+
+@media (min-width: 1444px) {
+
+    .logo {
+        padding: 17px 0 17px 0;
+    }
+
+    .menu {
+        padding: 13px 0;
+    }
+
+    .container {
+        max-width: 1170px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    
+}
