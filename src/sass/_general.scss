@@ -2,6 +2,14 @@
 
 .container {
     max-width: 100%;
+
+    @media (min-width: 1367px) {
+        max-width: 1170px;
+    }
+}
+
+.container {
+    max-width: 100%;
     padding: 0;
 }
 
@@ -15,15 +23,6 @@ nav {
     justify-content: space-between;
 }
 
-.container {
-    max-width: 100%;
-
-    @media (min-width: 1367px) {
-        max-width: 1170px;
-    }
-}
-
-
 
 .menu {
     position: sticky;
@@ -32,10 +31,7 @@ nav {
     display: flex;
     list-style-type: none;
     gap: 10px;
-
-    @media (max-width: 1024px) {
-        padding: 13px 16px 13px 0;
-    }
+    padding: 13px 16px 13px 0;
 
     &_link {
         color: black;
@@ -46,7 +42,6 @@ nav {
 
     &_button {
         @include yellow-button();
-        // list-style: none;
     }
 }
 
@@ -158,7 +153,172 @@ nav {
 .postskills {
     min-height: 740px;
     padding: 140px 0 100px 0;
+
+    form {
+        width: 328px;
+        margin: 0 auto;
+        background-color: #F8F8F8;
+        padding-left: 16px;
+        padding-right: 16px;
+    
+    
+        .phone_help {
+            @include font-style-nunito(#7E7E7E, 12px, left);
+            text-align: left;
+            padding-left: 16px;
+        }
+    
+        .radiogroup {
+            margin: 25px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            @include font-style-nunito(#000000, 16px, center);
+            text-align: start;
+            border-color: red;
+        }
+    
+        input[type="radio"]:checked {
+            background: $secondary;
+        }
+    
+        .round {
+            border: 1px solid $background;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            margin-right: 5px;
+        }
+    
+        input[type="radio"] {
+            appearance: none;
+            outline: none;
+            position: relative;
+            border-radius: 50%;
+            width: 9px;
+            height: 9px;
+            left: 5px;
+            bottom: 4px;
+            margin: 0;
+        }
+    
+    
+    
+        .radioButton {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+        }
+    
+    
+        .yellowBtn {
+            cursor: pointer;
+            padding-top: 4px;
+            margin: 50px auto 0 auto;
+            @include yellow-button();
+            border: none;
+        }
+    
+        .disabled {
+            background: #B4B4B4;
+            border-radius: 80px;
+        }
+    
+    
+        .material-textfield {
+            position: relative;
+        }
+    
+    
+        .error {
+            border: 2px solid $red;
+        }
+    
+        .text_label {
+            position: absolute;
+            font-size: 16px;
+            left: 20px;
+            top: 30%;
+            background-color: white;
+            color: gray;
+            margin-left: 20px;
+            transition: .1s ease-out;
+            transform-origin: left top;
+            pointer-events: none;
+            display: block;
+        }
+    
+        input[type="text"],
+        input[type="phone"],
+        input[type="email"] {
+            outline: none;
+            border: 1px solid gray;
+            margin: 50px auto 0 auto;
+            padding-left: 20px;
+            border-radius: 5px;
+            transition: 0.1s ease-out;
+            width: 304px;
+            height: 50px;
+            @include font-style-nunito(#000000, 16px, start);
+            display: block;
+        }
+    
+    
+        input[type="text"]:focus+label,
+        input[type="phone"]:focus+label,
+        input[type="email"]:focus+label {
+            top: 0%;
+            transform: translateY(-60%) scale(.9);
+        }
+    
+        input[type="text"]:not(:placeholder-shown)+label,
+        input[type="phone"]:not(:placeholder-shown)+label,
+        input[type="email"]:not(:placeholder-shown)+label {
+            top: 0%;
+            transform: translateY(-60%) scale(.9);
+        }
+    
+        .ph {
+            top: 20%;
+        }
+    
+        .input_error {
+            @include font-style-nunito($red, 12px, start);
+            line-height: 14px;
+            padding-left: 16px;
+        }
+    
+    
+        input[type=file] {
+            @include font-style-nunito(rgba(0, 0, 0, 0.87), 16px, center);
+            margin: 50px auto 0 auto;
+            border: 1px solid $background;
+            border-radius: 4px;
+            width: 326px;
+            height: 52px;
+            background-color: #F8F8F8;
+        }
+    
+        input[type=file]::file-selector-button {
+            font-weight: bold;
+            color: dodgerblue;
+            padding: 0.5em;
+            border: 1px solid rgba(0, 0, 0, 0.87);
+            border-radius: 4px 0px 0px 4px;
+            height: 52px;
+            margin-right: 16px;
+            @include font-style-nunito(rgba(0, 0, 0, 0.87), 16px, center);
+            content: 'your wording';
+        }
+    
+        .text_error {
+            color: $red;
+        }
+    }
+    
+
 }
+
 
 .skills_header {
     @include font-style-nunito(#000000, 40px, center);
@@ -166,203 +326,27 @@ nav {
     padding: 0 16px;
 }
 
-form {
-    width: 328px;
-    margin: 0 auto;
-    background-color: #F8F8F8;
-    padding-left: 16px;
-    padding-right: 16px;
-
-
-    .phone_help {
-        @include font-style-nunito(#7E7E7E, 12px, left);
-        text-align: left;
-        padding-left: 16px;
-    }
-
-    .radiogroup {
-        margin: 25px auto 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        @include font-style-nunito(#000000, 16px, center);
-        text-align: start;
-        border-color: red;
-    }
-
-    input[type="radio"]:checked {
-        background: $secondary;
-    }
-
-    .round {
-        border: 1px solid $background;
-        border-radius: 50%;
-        width: 19px;
-        height: 19px;
-        margin-right: 5px;
-    }
-
-    input[type="radio"] {
-        appearance: none;
-        outline: none;
-        position: relative;
-        border-radius: 50%;
-        width: 9px;
-        height: 9px;
-        left: 5px;
-        bottom: 4px;
-        margin: 0;
-    }
-
-
-
-    .radioButton {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-    }
-
-
-    .yellowBtn {
-        cursor: pointer;
-        padding-top: 4px;
-        margin: 50px auto 0 auto;
-        @include yellow-button();
-        border: none;
-    }
-
-    .disabled {
-        background: #B4B4B4;
-        border-radius: 80px;
-    }
-
-
-    .material-textfield {
-        position: relative;
-    }
-
-
-    .error {
-        border: 2px solid $red;
-    }
-
-    .text_label {
-        position: absolute;
-        font-size: 16px;
-        left: 20px;
-        top: 30%;
-        background-color: white;
-        color: gray;
-        margin-left: 20px;
-        transition: .1s ease-out;
-        transform-origin: left top;
-        pointer-events: none;
-        display: block;
-    }
-
-    input[type="text"],
-    input[type="phone"],
-    input[type="email"] {
-        outline: none;
-        border: 1px solid gray;
-        margin: 50px auto 0 auto;
-        padding-left: 20px;
-        border-radius: 5px;
-        transition: 0.1s ease-out;
-        width: 304px;
-        height: 50px;
-        @include font-style-nunito(#000000, 16px, start);
-        display: block;
-    }
-
-
-    input[type="text"]:focus+label,
-    input[type="phone"]:focus+label,
-    input[type="email"]:focus+label {
-        top: 0%;
-        transform: translateY(-60%) scale(.9);
-    }
-
-    input[type="text"]:not(:placeholder-shown)+label,
-    input[type="phone"]:not(:placeholder-shown)+label,
-    input[type="email"]:not(:placeholder-shown)+label {
-        top: 0%;
-        transform: translateY(-60%) scale(.9);
-    }
-
-    .ph {
-        top: 20%;
-    }
-
-    .input_error {
-        @include font-style-nunito($red, 12px, start);
-        line-height: 14px;
-        padding-left: 16px;
-    }
-
-
-    input[type=file] {
-        @include font-style-nunito(rgba(0, 0, 0, 0.87), 16px, center);
-        margin: 50px auto 0 auto;
-        border: 1px solid $background;
-        border-radius: 4px;
-        width: 326px;
-        height: 52px;
-        background-color: #F8F8F8;
-    }
-
-    input[type=file]::file-selector-button {
-        font-weight: bold;
-        color: dodgerblue;
-        padding: 0.5em;
-        border: 1px solid rgba(0, 0, 0, 0.87);
-        border-radius: 4px 0px 0px 4px;
-        height: 52px;
-        margin-right: 16px;
-        @include font-style-nunito(rgba(0, 0, 0, 0.87), 16px, center);
-        content: 'your wording';
-    }
-
-    .text_error {
-        color: $red;
-    }
-}
-
-
-.rec__border-word {
-    font-size: 18px;
-    color: #000000;
-    background-color: none;
-    position: relative;
-
-    z-index: 10;
-    top: 50px;
-    left: -80px;
-    background-color: #F8F8F8;
-}
-
-
 
 .hidden {
     display: none;
 }
 
 
-
-
-
 .successForm {
     min-height: 380px;
     padding: 140px 0 100px 0;
+
+    #success-img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+
+    
 }
 
-#success-img {
-    display: block;
-    margin: 0 auto;
-    padding-top: 60px;
-}
 
-.footer {
+footer {
     display: none;
 }
 
